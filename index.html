@@ -1,467 +1,649 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TGK Admin — Support &amp; Privacy Policy</title>
-  <style>
-    :root {
-      --navy-deep:   #111f2b;
-      --navy:        #1a3a4a;
-      --navy-light:  #1e3a5c;
-      --card:        #24394c;
-      --card-alt:    #2a4358;
-      --border:      #3d556b;
-      --text:        #edf5fb;
-      --text-muted:  #afc2d3;
-      --gold:        #f2a047;
-      --gold-soft:   #f7bf90;
-      --blue:        #579cc3;
-      --green:       #7fb069;
-      --danger:      #f87171;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGK App — Support &amp; Privacy Policy</title>
+    <style>
+      :root {
+        --navy-deep: #111f2b;
+        --navy: #1a3a4a;
+        --navy-light: #1e3a5c;
+        --card: #24394c;
+        --card-alt: #2a4358;
+        --border: #3d556b;
+        --text: #edf5fb;
+        --text-muted: #afc2d3;
+        --gold: #f2a047;
+        --gold-soft: #f7bf90;
+        --blue: #579cc3;
+        --green: #7fb069;
+        --danger: #f87171;
+      }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--navy-deep);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 16px;
-    }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: var(--navy-deep);
+        color: var(--text);
+        line-height: 1.7;
+        font-size: 16px;
+      }
 
-    /* ── Header ── */
-    header {
-      background: var(--navy);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 24px 28px;
-      text-align: center;
-    }
+      /* ── Header ── */
+      header {
+        background: var(--navy);
+        border-bottom: 1px solid var(--border);
+        padding: 32px 24px 28px;
+        text-align: center;
+      }
 
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 8px;
-    }
+      .logo-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-bottom: 8px;
+      }
 
-    .logo-wrap img {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-    }
+      .logo-wrap img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #fff;
+      }
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--gold);
-      letter-spacing: -0.5px;
-    }
+      header h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: -0.5px;
+      }
 
-    header p.tagline {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-top: 4px;
-    }
+      header p.tagline {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-top: 4px;
+      }
 
-    /* ── Nav tabs ── */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      background: var(--navy);
-      border-bottom: 1px solid var(--border);
-    }
+      /* ── Nav tabs ── */
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        background: var(--navy);
+        border-bottom: 1px solid var(--border);
+      }
 
-    nav button {
-      background: none;
-      border: none;
-      border-bottom: 3px solid transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      padding: 14px 32px;
-      text-transform: uppercase;
-      transition: color 0.15s, border-color 0.15s;
-    }
+      nav button {
+        background: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        color: var(--text-muted);
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        padding: 14px 32px;
+        text-transform: uppercase;
+        transition:
+          color 0.15s,
+          border-color 0.15s;
+      }
 
-    nav button:hover  { color: var(--text); }
-    nav button.active { color: var(--gold); border-bottom-color: var(--gold); }
+      nav button:hover {
+        color: var(--text);
+      }
+      nav button.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
 
-    /* ── Main layout ── */
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+      /* ── Main layout ── */
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
 
-    section { display: none; }
-    section.visible { display: block; }
+      section {
+        display: none;
+      }
+      section.visible {
+        display: block;
+      }
 
-    /* ── Typography ── */
-    h2 {
-      color: var(--gold);
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      margin-top: 40px;
-    }
+      /* ── Typography ── */
+      h2 {
+        color: var(--gold);
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+        margin-top: 40px;
+      }
 
-    h2:first-child { margin-top: 0; }
+      h2:first-child {
+        margin-top: 0;
+      }
 
-    h3 {
-      color: var(--gold-soft);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-top: 28px;
-      margin-bottom: 6px;
-    }
+      h3 {
+        color: var(--gold-soft);
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-top: 28px;
+        margin-bottom: 6px;
+      }
 
-    p  { color: var(--text-muted); margin-bottom: 14px; }
-    li { color: var(--text-muted); margin-bottom: 6px; }
-    ul { padding-left: 20px; margin-bottom: 14px; }
+      p {
+        color: var(--text-muted);
+        margin-bottom: 14px;
+      }
+      li {
+        color: var(--text-muted);
+        margin-bottom: 6px;
+      }
+      ul {
+        padding-left: 20px;
+        margin-bottom: 14px;
+      }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    /* ── Cards ── */
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 28px;
-      margin-bottom: 20px;
-    }
+      /* ── Cards ── */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 24px 28px;
+        margin-bottom: 20px;
+      }
 
-    .card-title {
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
+      .card-title {
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
 
-    /* ── Feature grid ── */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 28px;
-    }
+      /* ── Feature grid ── */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+        margin-bottom: 28px;
+      }
 
-    .feature-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
+      .feature-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
 
-    .feature-icon {
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
+      .feature-icon {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+      }
 
-    .feature-label {
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
+      .feature-label {
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
 
-    .feature-desc {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      margin-top: 3px;
-    }
+      .feature-desc {
+        color: var(--text-muted);
+        font-size: 0.82rem;
+        margin-top: 3px;
+      }
 
-    /* ── Contact block ── */
-    .contact-block {
-      background: var(--card-alt);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 20px;
-    }
+      /* ── Contact block ── */
+      .contact-block {
+        background: var(--card-alt);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--gold);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin-bottom: 20px;
+      }
 
-    .contact-block .label {
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
+      .contact-block .label {
+        color: var(--text-muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
 
-    .contact-block .value {
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 600;
-    }
+      .contact-block .value {
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 600;
+      }
 
-    /* ── Divider ── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 32px 0;
-    }
+      /* ── Divider ── */
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 32px 0;
+      }
 
-    /* ── Updated badge ── */
-    .updated {
-      display: inline-block;
-      background: var(--card-alt);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      padding: 3px 10px;
-      margin-bottom: 24px;
-    }
+      /* ── Updated badge ── */
+      .updated {
+        display: inline-block;
+        background: var(--card-alt);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text-muted);
+        font-size: 0.78rem;
+        padding: 3px 10px;
+        margin-bottom: 24px;
+      }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 28px 24px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.82rem;
-    }
+      /* ── Footer ── */
+      footer {
+        text-align: center;
+        padding: 28px 24px;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.82rem;
+      }
 
-    footer span { color: var(--gold); }
+      footer span {
+        color: var(--gold);
+      }
 
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.5rem; }
-      nav button { padding: 12px 18px; font-size: 0.82rem; }
-      main { padding: 32px 16px 60px; }
-    }
-  </style>
-</head>
-<body>
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.5rem;
+        }
+        nav button {
+          padding: 12px 18px;
+          font-size: 0.82rem;
+        }
+        main {
+          padding: 32px 16px 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-wrap">
+        <img
+          src="https://www.thegoodkitchen.org/images/TGK_NBG.webp"
+          alt="The Good Kitchen"
+          onerror="this.style.display = 'none'"
+        />
+        <h1>TGK App</h1>
+      </div>
+    </header>
 
-  <header>
-    <div class="logo-wrap">
-      <img src="https://www.thegoodkitchen.org/images/TGK_NBG.webp"
-           alt="The Good Kitchen"
-           onerror="this.style.display='none'" />
-      <h1>TGK Admin</h1>
-    </div>
-    <p class="tagline">The Good Kitchen — Internal Operations App</p>
-  </header>
+    <nav>
+      <button class="active" onclick="showTab('support', this)">Support</button>
+      <button onclick="showTab('privacy', this)">Privacy Policy</button>
+    </nav>
 
-  <nav>
-    <button class="active" onclick="showTab('support', this)">Support</button>
-    <button onclick="showTab('privacy', this)">Privacy Policy</button>
-  </nav>
-
-  <main>
-
-    <!-- ══════════════════════════════════════════
+    <main>
+      <!-- ══════════════════════════════════════════
          SUPPORT
     ══════════════════════════════════════════ -->
-    <section id="support" class="visible">
+      <section id="support" class="visible">
+        <span class="updated">Last updated: June 2026</span>
 
-      <span class="updated">Last updated: June 2026</span>
+        <h2>App Support</h2>
+        <p>
+          TGK App is the internal operations platform for
+          <strong style="color: var(--text)">The Good Kitchen</strong> — used by
+          staff and volunteers to manage events, track meals served, coordinate
+          scheduling, and run day-to-day operations.
+        </p>
 
-      <h2>App Support</h2>
-      <p>
-        TGK Admin is the internal operations platform for <strong style="color:var(--text)">The Good Kitchen</strong> —
-        used by staff and volunteers to manage events, track meals served, coordinate scheduling,
-        and run day-to-day operations.
-      </p>
-
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon">📅</div>
-          <div class="feature-label">Event Management</div>
-          <div class="feature-desc">Create, edit, and track Chef Takeovers, Meal Deliveries, and more</div>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">📅</div>
+            <div class="feature-label">Event Management</div>
+            <div class="feature-desc">
+              Create, edit, and track Chef Takeovers, Meal Deliveries, and more
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🙋</div>
+            <div class="feature-label">Volunteer Portal</div>
+            <div class="feature-desc">
+              Claim timeslots, check in, view hours, and get approved
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✅</div>
+            <div class="feature-label">Check-In</div>
+            <div class="feature-desc">
+              Live event sign-in with real-time meal tracking
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">💬</div>
+            <div class="feature-label">Messaging</div>
+            <div class="feature-desc">
+              Team channels and direct messaging for staff coordination
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🤖</div>
+            <div class="feature-label">AI Assistant</div>
+            <div class="feature-desc">
+              Ask questions, manage records, and generate reports
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📊</div>
+            <div class="feature-label">Operations Dashboard</div>
+            <div class="feature-desc">
+              Live metrics, todos, upcoming events, and donation alerts
+            </div>
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">🙋</div>
-          <div class="feature-label">Volunteer Portal</div>
-          <div class="feature-desc">Claim timeslots, check in, view hours, and get approved</div>
+
+        <hr />
+
+        <h2>Contact Support</h2>
+        <p>
+          This app is restricted to authorized The Good Kitchen staff and
+          volunteers. If you need assistance, please reach out through one of
+          the channels below.
+        </p>
+
+        <div class="contact-block">
+          <div class="label">Email Support</div>
+          <div class="value">
+            <a href="mailto:dschaaf12@me.com">dschaaf12@me.com</a>
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">✅</div>
-          <div class="feature-label">Check-In</div>
-          <div class="feature-desc">Live event sign-in with real-time meal tracking</div>
+
+        <div class="contact-block">
+          <div class="label">Organization Website</div>
+          <div class="value">
+            <a
+              href="https://www.thegoodkitchen.org"
+              target="_blank"
+              rel="noopener"
+              >thegoodkitchen.org</a
+            >
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">💬</div>
-          <div class="feature-label">Messaging</div>
-          <div class="feature-desc">Team channels and direct messaging for staff coordination</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🤖</div>
-          <div class="feature-label">AI Assistant</div>
-          <div class="feature-desc">Ask questions, manage records, and generate reports</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📊</div>
-          <div class="feature-label">Operations Dashboard</div>
-          <div class="feature-desc">Live metrics, todos, upcoming events, and donation alerts</div>
-        </div>
-      </div>
 
-      <hr />
+        <hr />
 
-      <h2>Contact Support</h2>
-      <p>This app is restricted to authorized The Good Kitchen staff and volunteers. If you need assistance, please reach out through one of the channels below.</p>
+        <h2>Frequently Asked Questions</h2>
 
-      <div class="contact-block">
-        <div class="label">Email Support</div>
-        <div class="value"><a href="mailto:dschaaf12@me.com">dschaaf12@me.com</a></div>
-      </div>
+        <h3>I can't log in — what should I do?</h3>
+        <p>
+          Your account must be created by a TGK administrator. If you're a new
+          staff member or volunteer, contact your coordinator to have your
+          account set up. If you've forgotten your password, use the "Forgot
+          Password" link on the login screen.
+        </p>
 
-      <div class="contact-block">
-        <div class="label">Organization Website</div>
-        <div class="value"><a href="https://www.thegoodkitchen.org" target="_blank" rel="noopener">thegoodkitchen.org</a></div>
-      </div>
+        <h3>I'm not receiving push notifications</h3>
+        <p>
+          Go to your iPhone's Settings → TGK App and make sure notifications
+          are enabled. Also check that you're signed in — notifications require
+          an active session.
+        </p>
 
-      <hr />
+        <h3>The app asks for camera or microphone access</h3>
+        <p>
+          Camera access is used to upload event photos and profile images.
+          Microphone access is used for voice messages in the chat feature. You
+          can manage these permissions in Settings → TGK App at any time.
+        </p>
 
-      <h2>Frequently Asked Questions</h2>
+        <h3>Face ID / Touch ID isn't working</h3>
+        <p>
+          Biometric login can be enabled or disabled in the app's Account
+          settings. If Face ID is grayed out, check that it's enabled for TGK
+          App in Settings → Face ID &amp; Passcode.
+        </p>
 
-      <h3>I can't log in — what should I do?</h3>
-      <p>Your account must be created by a TGK administrator. If you're a new staff member or volunteer, contact your coordinator to have your account set up. If you've forgotten your password, use the "Forgot Password" link on the login screen.</p>
+        <h3>How do I withdraw from a volunteer event?</h3>
+        <p>
+          Open the Events tab, tap the event you're signed up for, and select
+          "Cancel Volunteer Time." Cancellation notifications are sent
+          automatically to event coordinators.
+        </p>
 
-      <h3>I'm not receiving push notifications</h3>
-      <p>Go to your iPhone's Settings → TGK Admin and make sure notifications are enabled. Also check that you're signed in — notifications require an active session.</p>
+        <h3>What does the home screen widget show?</h3>
+        <p>
+          The TGK widget displays your next upcoming event date and a quick
+          stats summary. It updates automatically as events are scheduled.
+        </p>
+      </section>
 
-      <h3>The app asks for camera or microphone access</h3>
-      <p>Camera access is used to upload event photos and profile images. Microphone access is used for voice messages in the chat feature. You can manage these permissions in Settings → TGK Admin at any time.</p>
-
-      <h3>Face ID / Touch ID isn't working</h3>
-      <p>Biometric login can be enabled or disabled in the app's Account settings. If Face ID is grayed out, check that it's enabled for TGK Admin in Settings → Face ID &amp; Passcode.</p>
-
-      <h3>How do I withdraw from a volunteer event?</h3>
-      <p>Open the Events tab, tap the event you're signed up for, and select "Cancel Volunteer Time." Cancellation notifications are sent automatically to event coordinators.</p>
-
-      <h3>What does the home screen widget show?</h3>
-      <p>The TGK widget displays your next upcoming event date and a quick stats summary. It updates automatically as events are scheduled.</p>
-
-    </section>
-
-    <!-- ══════════════════════════════════════════
+      <!-- ══════════════════════════════════════════
          PRIVACY POLICY
     ══════════════════════════════════════════ -->
-    <section id="privacy">
+      <section id="privacy">
+        <span class="updated">Last updated: June 2026</span>
 
-      <span class="updated">Last updated: June 2026</span>
+        <h2>Privacy Policy</h2>
+        <p>
+          This Privacy Policy describes how
+          <strong style="color: var(--text)">The Good Kitchen</strong>
+          ("we," "us," or "our") collects, uses, and protects information in
+          connection with the
+          <strong style="color: var(--text)">TGK App</strong> iOS application.
+        </p>
+        <p>
+          TGK App is an
+          <strong style="color: var(--text)">internal operations app</strong>
+          available exclusively to authorized staff and volunteers of The Good
+          Kitchen. It is not a public consumer application.
+        </p>
 
-      <h2>Privacy Policy</h2>
-      <p>
-        This Privacy Policy describes how <strong style="color:var(--text)">The Good Kitchen</strong>
-        ("we," "us," or "our") collects, uses, and protects information in connection with the
-        <strong style="color:var(--text)">TGK Admin</strong> iOS application.
-      </p>
-      <p>
-        TGK Admin is an <strong style="color:var(--text)">internal operations app</strong> available
-        exclusively to authorized staff and volunteers of The Good Kitchen. It is not a public consumer application.
-      </p>
+        <hr />
 
-      <hr />
+        <h2>Information We Collect</h2>
 
-      <h2>Information We Collect</h2>
+        <h3>Account Information</h3>
+        <p>
+          When you are set up as a user, we store your name, email address, role
+          (staff or volunteer), and profile photo if provided. This information
+          is used solely to authenticate you and personalize your experience
+          within the app.
+        </p>
 
-      <h3>Account Information</h3>
-      <p>When you are set up as a user, we store your name, email address, role (staff or volunteer), and profile photo if provided. This information is used solely to authenticate you and personalize your experience within the app.</p>
+        <h3>Volunteer &amp; Event Data</h3>
+        <p>
+          We record your event sign-ups, timeslot selections, check-in history,
+          and volunteer hours. This data is used to coordinate event operations
+          and generate service records.
+        </p>
 
-      <h3>Volunteer &amp; Event Data</h3>
-      <p>We record your event sign-ups, timeslot selections, check-in history, and volunteer hours. This data is used to coordinate event operations and generate service records.</p>
+        <h3>Device &amp; Push Notification Tokens</h3>
+        <p>
+          We collect your device's push notification token to send you event
+          reminders, approval notifications, and operational updates. This token
+          is stored securely on our servers and is never shared with third
+          parties.
+        </p>
 
-      <h3>Device &amp; Push Notification Tokens</h3>
-      <p>We collect your device's push notification token to send you event reminders, approval notifications, and operational updates. This token is stored securely on our servers and is never shared with third parties.</p>
+        <h3>Photos &amp; Media</h3>
+        <p>
+          If you upload event photos or a profile picture, that image is stored
+          on our servers and displayed within the app. We do not access your
+          photo library without your explicit action.
+        </p>
 
-      <h3>Photos &amp; Media</h3>
-      <p>If you upload event photos or a profile picture, that image is stored on our servers and displayed within the app. We do not access your photo library without your explicit action.</p>
+        <h3>Usage &amp; Error Data</h3>
+        <p>
+          We may collect basic usage logs and error reports to diagnose issues
+          and improve the app. This data does not identify you personally and is
+          not sold or shared.
+        </p>
 
-      <h3>Usage &amp; Error Data</h3>
-      <p>We may collect basic usage logs and error reports to diagnose issues and improve the app. This data does not identify you personally and is not sold or shared.</p>
+        <hr />
 
-      <hr />
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li>To authenticate you and maintain your session</li>
+          <li>
+            To coordinate volunteer scheduling, event management, and check-in
+          </li>
+          <li>To send operational push notifications relevant to your role</li>
+          <li>To generate volunteer service hour records</li>
+          <li>To improve app performance and fix bugs</li>
+        </ul>
 
-      <h2>How We Use Your Information</h2>
-      <ul>
-        <li>To authenticate you and maintain your session</li>
-        <li>To coordinate volunteer scheduling, event management, and check-in</li>
-        <li>To send operational push notifications relevant to your role</li>
-        <li>To generate volunteer service hour records</li>
-        <li>To improve app performance and fix bugs</li>
-      </ul>
+        <hr />
 
-      <hr />
+        <h2>Information Sharing</h2>
+        <p>
+          We do <strong style="color: var(--text)">not</strong> sell, rent, or
+          trade your personal information. Your data may be visible to other
+          authorized TGK staff members within the app as part of normal
+          operations (e.g., event coordinators can see volunteer sign-ups).
+        </p>
+        <p>
+          We use the following third-party services in the operation of this
+          app:
+        </p>
+        <ul>
+          <li>
+            <strong style="color: var(--text)">Neon (PostgreSQL)</strong> —
+            secure database hosting
+          </li>
+          <li>
+            <strong style="color: var(--text)">Netlify</strong> — backend API
+            hosting
+          </li>
+          <li>
+            <strong style="color: var(--text)">Expo / EAS</strong> — app
+            distribution and over-the-air updates
+          </li>
+          <li>
+            <strong style="color: var(--text)"
+              >Google (Gmail &amp; Drive)</strong
+            >
+            — integrated via your TGK Google account for authorized staff
+          </li>
+          <li>
+            <strong style="color: var(--text)">Stream Chat</strong> — in-app
+            messaging infrastructure
+          </li>
+          <li>
+            <strong style="color: var(--text)">Anthropic (Claude)</strong> — AI
+            assistant features for authorized admin users
+          </li>
+        </ul>
+        <p>
+          Each of these providers maintains their own privacy practices and
+          security standards.
+        </p>
 
-      <h2>Information Sharing</h2>
-      <p>We do <strong style="color:var(--text)">not</strong> sell, rent, or trade your personal information. Your data may be visible to other authorized TGK staff members within the app as part of normal operations (e.g., event coordinators can see volunteer sign-ups).</p>
-      <p>We use the following third-party services in the operation of this app:</p>
-      <ul>
-        <li><strong style="color:var(--text)">Neon (PostgreSQL)</strong> — secure database hosting</li>
-        <li><strong style="color:var(--text)">Netlify</strong> — backend API hosting</li>
-        <li><strong style="color:var(--text)">Expo / EAS</strong> — app distribution and over-the-air updates</li>
-        <li><strong style="color:var(--text)">Google (Gmail &amp; Drive)</strong> — integrated via your TGK Google account for authorized staff</li>
-        <li><strong style="color:var(--text)">Stream Chat</strong> — in-app messaging infrastructure</li>
-        <li><strong style="color:var(--text)">Anthropic (Claude)</strong> — AI assistant features for authorized admin users</li>
-      </ul>
-      <p>Each of these providers maintains their own privacy practices and security standards.</p>
+        <hr />
 
-      <hr />
+        <h2>Data Security</h2>
+        <p>
+          All data is transmitted over HTTPS. Sensitive credentials such as
+          session tokens are stored in the device's secure keychain using Expo
+          SecureStore. We do not store passwords in plain text.
+        </p>
 
-      <h2>Data Security</h2>
-      <p>All data is transmitted over HTTPS. Sensitive credentials such as session tokens are stored in the device's secure keychain using Expo SecureStore. We do not store passwords in plain text.</p>
+        <hr />
 
-      <hr />
+        <h2>Data Retention</h2>
+        <p>
+          Your account data is retained for as long as you are an active staff
+          member or volunteer with The Good Kitchen. Upon request, we can remove
+          your personal data from our systems. Contact us at the address below.
+        </p>
 
-      <h2>Data Retention</h2>
-      <p>Your account data is retained for as long as you are an active staff member or volunteer with The Good Kitchen. Upon request, we can remove your personal data from our systems. Contact us at the address below.</p>
+        <hr />
 
-      <hr />
+        <h2>Children's Privacy</h2>
+        <p>
+          TGK App is intended for use by adults (18+) who are authorized staff
+          or volunteers. We do not knowingly collect information from minors.
+        </p>
 
-      <h2>Children's Privacy</h2>
-      <p>TGK Admin is intended for use by adults (18+) who are authorized staff or volunteers. We do not knowingly collect information from minors.</p>
+        <hr />
 
-      <hr />
+        <h2>Your Rights</h2>
+        <p>
+          You may request to access, correct, or delete your personal data at
+          any time by contacting us. We will respond within a reasonable
+          timeframe.
+        </p>
 
-      <h2>Your Rights</h2>
-      <p>You may request to access, correct, or delete your personal data at any time by contacting us. We will respond within a reasonable timeframe.</p>
+        <hr />
 
-      <hr />
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy periodically. Significant changes
+          will be communicated through the app or by email. Continued use of the
+          app after changes constitutes acceptance of the revised policy.
+        </p>
 
-      <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy periodically. Significant changes will be communicated through the app or by email. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+        <hr />
 
-      <hr />
+        <h2>Contact Us</h2>
+        <p>
+          If you have questions about this Privacy Policy or your data, please
+          contact:
+        </p>
 
-      <h2>Contact Us</h2>
-      <p>If you have questions about this Privacy Policy or your data, please contact:</p>
+        <div class="contact-block">
+          <div class="label">The Good Kitchen — App Privacy</div>
+          <div class="value">
+            <a href="mailto:dschaaf12@me.com">dschaaf12@me.com</a>
+          </div>
+        </div>
 
-      <div class="contact-block">
-        <div class="label">The Good Kitchen — App Privacy</div>
-        <div class="value"><a href="mailto:dschaaf12@me.com">dschaaf12@me.com</a></div>
-      </div>
+        <div class="contact-block">
+          <div class="label">Website</div>
+          <div class="value">
+            <a
+              href="https://www.thegoodkitchen.org"
+              target="_blank"
+              rel="noopener"
+              >thegoodkitchen.org</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <div class="contact-block">
-        <div class="label">Website</div>
-        <div class="value"><a href="https://www.thegoodkitchen.org" target="_blank" rel="noopener">thegoodkitchen.org</a></div>
-      </div>
+    <footer>
+      &copy; 2026 <span>The Good Kitchen</span>. All rights reserved.
+    </footer>
 
-    </section>
-
-  </main>
-
-  <footer>
-    &copy; 2026 <span>The Good Kitchen</span>. All rights reserved.
-  </footer>
-
-  <script>
-    function showTab(id, btn) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('visible'));
-      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-      document.getElementById(id).classList.add('visible');
-      btn.classList.add('active');
-    }
-  </script>
-
-</body>
+    <script>
+      function showTab(id, btn) {
+        document
+          .querySelectorAll("section")
+          .forEach((s) => s.classList.remove("visible"));
+        document
+          .querySelectorAll("nav button")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById(id).classList.add("visible");
+        btn.classList.add("active");
+      }
+    </script>
+  </body>
 </html>
